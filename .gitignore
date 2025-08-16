@@ -1,0 +1,35 @@
+Set-Content -Encoding utf8 .gitignore @"
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.venv/
+.venv*/
+.env
+.env.*
+.pytest_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+dist/
+build/
+
+# --- Editors/OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Notebooks (if any) ---
+.ipynb_checkpoints/
+
+# --- Logs ---
+*.log
+
+# --- Misc ---
+.python-version
+"@
