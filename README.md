@@ -1,3 +1,22 @@
+> **Kurzüberblick (DE)**
+>
+> FastAPI-Service zum Bereinigen von Text/HTML.
+> - Endpoint: `POST /clean` (Bearer-Token, einfaches Rate-Limit)
+> - Funktion: HTML → Text (Word-Artefakte entfernt, `<br>` → Zeilenumbrüche), unsichtbare Unicode-Zeichen (inkl. `\u200b`) entfernen, Gedankenstriche normalisieren, Whitespace bereinigen
+> - Web-UI: unter `/` (responsive, mit Logo)
+>
+> **Start (lokal)**
+> ```bash
+> python -m venv .venv
+> .venv\Scripts\activate
+> pip install -r requirements.txt
+> uvicorn app.main:app --reload
+> ```
+> **Auth:** `Authorization: Bearer dev-token`  
+> **Beispiel:** Body `{ "text": "<p>Hello&nbsp;&nbsp;— world<br><br>zero\\u200bwidth</p>" }` → Antwort `"Hello - world\n\nzerowidth"`
+>
+> _English details below._
+
 # 🧹 Content Cleaner API
 
 FastAPI microservice that **cleans and normalizes text/HTML**.  
